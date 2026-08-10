@@ -23,3 +23,42 @@ menu = st.sidebar.selectbox(
     ["Home", "Find Equipment", "Book Equipment",
      "Add Equipment", "My Bookings"]
 )
+if menu == "Home":
+    st.write("### 🌾 Welcome Farmers!")
+    st.write("Rent agricultural equipment at affordable prices.")
+    st.info("Farmers can rent machines from nearby equipment owners.")
+    st.success("Save money by renting instead of buying machinery.")
+elif menu == "Find Equipment":
+    st.header("🔍 Find Equipment")
+    location = st.text_input("Enter your location")
+    kind = st.selectbox(
+        "Equipment Type",
+        ["All", "Tractor", "Harvester",
+         "Sprayer", "Rotavator"]
+    )
+    for item in equipment:
+        if ((kind == "All" or item["type"] == kind) and
+                (not location or
+                 location.lower() in item["location"].lower())):
+            st.write(f"### 🚜 {item['name']}")
+            st.write(f"Type: {item['type']}")
+            st.write(f"Location: {item['location']}")
+            st.write(f"Rent: ₹{item['price']} / day")
+            st.divider()
+elif menu == "Book Equipment":
+    st.header("📅 Book Equipment")
+    names = [x["name"] for x in equipment]
+    selected = st.selectbox("Select Equipment", names)
+    days = st.number_input("Number of Days", 1, 30, 1)
+    farmer = st.text_input("Farmer Name")
+    if st.button("Confirm Booking"):
+        item = next(x for x in equipment
+                    if x["name"] == selected)
+        total = item["price"] * days
+        st.session_state.bookings.append(
+            {"farmer": farmer,
+             "equipment": selected,
+             "days": days,
+             "total": total}
+        )
+        st.success(f"Booking confirmed! Total: ₹{total}")
