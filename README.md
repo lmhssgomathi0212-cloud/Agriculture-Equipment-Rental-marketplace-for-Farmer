@@ -62,3 +62,32 @@ elif menu == "Book Equipment":
              "total": total}
         )
         st.success(f"Booking confirmed! Total: ₹{total}")
+elif menu == "Add Equipment":
+    st.header("➕ Add Equipment")
+    name = st.text_input("Equipment Name")
+    typ = st.selectbox(
+        "Type",
+        ["Tractor", "Harvester",
+         "Sprayer", "Rotavator"]
+    )
+    price = st.number_input("Daily Rent", 100, 10000)
+    loc = st.text_input("Location")
+    if st.button("Add Listing"):
+        equipment.append({
+            "name": name,
+            "type": typ,
+            "price": price,
+            "location": loc
+        })
+        st.success("Equipment listed successfully!")
+elif menu == "My Bookings":
+    st.header("📋 My Bookings")
+    if not st.session_state.bookings:
+        st.warning("No bookings available.")
+    else:
+        for booking in st.session_state.bookings:
+            st.write(f"👨‍🌾 Farmer: {booking['farmer']}")
+            st.write(f"🚜 Equipment: {booking['equipment']}")
+            st.write(f"📅 Days: {booking['days']}")
+            st.write(f"💰 Total: ₹{booking['total']}")
+            st.divider()
