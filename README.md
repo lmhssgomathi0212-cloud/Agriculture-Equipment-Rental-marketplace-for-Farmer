@@ -17,3 +17,10 @@ equipment = [
         "location": "Chennai",
         "price": "₹1,500/day"
     },
+{
+        "name": "Rotavator",
+        "category": "Tillage Equipment",
+        "owner": "Kumar",
+        "location": "Coimbatore",
+        "price": "₹1,000/day"
+    },
