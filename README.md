@@ -9,3 +9,11 @@ st.write("Farmers can easily find and rent agricultural equipment.")
 st.markdown(
     "### 🌐 [Open Agri Equipment Rental Website](http://localhost:8501)"
 )
+equipment = [
+    {
+        "name": "Tractor",
+        "category": "Tractor",
+        "owner": "Ramesh",
+        "location": "Chennai",
+        "price": "₹1,500/day"
+    },
