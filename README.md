@@ -24,3 +24,18 @@ equipment = [
         "location": "Coimbatore",
         "price": "₹1,000/day"
     },
+{
+        "name": "Seed Drill",
+        "category": "Sowing Equipment",
+        "owner": "Suresh",
+        "location": "Madurai",
+        "price": "₹800/day"
+    },
+    {
+        "name": "Power Weeder",
+        "category": "Weeding Equipment",
+        "owner": "Arun",
+        "location": "Salem",
+        "price": "₹700/day"
+    },
+    
