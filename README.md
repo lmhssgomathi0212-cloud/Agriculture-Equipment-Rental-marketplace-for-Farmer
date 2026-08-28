@@ -166,3 +166,6 @@ if st.button(
             st.write("Location:", location)
         else:
             st.warning("Please fill in all the fields.")
+st.sidebar.divider()
+st.sidebar.write("🌱 Agri Equipment Rental")
+st.sidebar.write("Helping farmers find equipment easily.")
