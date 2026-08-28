@@ -141,3 +141,17 @@ if st.button(
             st.divider()
     else:
         st.warning("No equipment found.")
+elif menu == "👤 Profile":
+    st.header("👤 Profile")
+    name = st.text_input(
+        "Your Name",
+        key="profile_name"
+    )
+    phone = st.text_input(
+        "Phone Number",
+        key="profile_phone"
+    )
+    location = st.text_input(
+        "Your Location",
+        key="profile_location"
+    )
