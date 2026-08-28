@@ -155,3 +155,14 @@ elif menu == "👤 Profile":
         "Your Location",
         key="profile_location"
     )
+if st.button(
+        "Save Profile",
+        key="save_profile"
+    ):
+        if name and phone and location:
+            st.success("✅ Profile saved successfully!")
+            st.write("Name:", name)
+            st.write("Phone:", phone)
+            st.write("Location:", location)
+        else:
+            st.warning("Please fill in all the fields.")
