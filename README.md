@@ -66,3 +66,16 @@ if menu == "🏠 Home":
         "Our platform helps farmers find agricultural equipment "
         "available for rental."
     )
+col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric("🚜 Equipment", len(equipment))
+    with col2:
+        st.metric(
+            "👨‍🌾 Owners",
+            len(set(item["owner"] for item in equipment))
+        )
+    with col3:
+        st.metric(
+            "📍 Locations",
+            len(set(item["location"] for item in equipment))
+        )
