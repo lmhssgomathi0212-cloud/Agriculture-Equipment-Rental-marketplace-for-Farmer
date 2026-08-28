@@ -131,3 +131,13 @@ results = []
             with col2:
                 st.write("Location:", item["location"])
                 st.write("Rental Price:", item["price"])
+if st.button(
+                "Rent Equipment",
+                key=f"rent_{item['name']}"
+            ):
+                st.success(
+                    f"You selected {item['name']} for rental."
+                )
+            st.divider()
+    else:
+        st.warning("No equipment found.")
