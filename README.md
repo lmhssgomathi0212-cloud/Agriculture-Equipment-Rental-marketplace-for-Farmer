@@ -120,3 +120,14 @@ results = []
         )
         if search_match and category_match:
             results.append(item)
+            if results:
+        st.success(f"{len(results)} equipment found.")
+        for item in results:
+            st.subheader("🚜 " + item["name"])
+            col1, col2 = st.columns(2)
+            with col1:
+                st.write("Category:", item["category"])
+                st.write("Owner:", item["owner"])
+            with col2:
+                st.write("Location:", item["location"])
+                st.write("Rental Price:", item["price"])
