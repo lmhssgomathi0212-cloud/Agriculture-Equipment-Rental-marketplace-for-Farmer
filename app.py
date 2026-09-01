@@ -31,3 +31,10 @@ equipment = [
         "location": "Madurai",
         "price": "₹800/day"
     },
+{
+        "name": "Power Weeder",
+        "category": "Weeding Equipment",
+        "owner": "Arun",
+        "location": "Salem",
+        "price": "₹700/day"
+    },
