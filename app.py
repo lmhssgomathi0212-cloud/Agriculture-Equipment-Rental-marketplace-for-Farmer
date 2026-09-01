@@ -24,3 +24,10 @@ equipment = [
         "location": "Coimbatore",
         "price": "₹1,000/day"
     },
+{
+        "name": "Seed Drill",
+        "category": "Sowing Equipment",
+        "owner": "Suresh",
+        "location": "Madurai",
+        "price": "₹800/day"
+    },
