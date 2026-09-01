@@ -4,3 +4,5 @@ st.set_page_config(
     page_icon="🚜",
     layout="wide"
 )
+st.title("🚜 Agri Equipment Rental")
+st.write("Farmers can easily find and rent agricultural equipment.")
