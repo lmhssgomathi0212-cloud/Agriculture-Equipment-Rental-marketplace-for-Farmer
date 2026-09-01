@@ -38,3 +38,18 @@ equipment = [
         "location": "Salem",
         "price": "₹700/day"
     },
+{
+        "name": "Harvester",
+        "category": "Harvesting Equipment",
+        "owner": "Mani",
+        "location": "Trichy",
+        "price": "₹2,500/day"
+    },
+    {
+        "name": "Sprayer",
+        "category": "Spraying Equipment",
+        "owner": "Vijay",
+        "location": "Erode",
+        "price": "₹500/day"
+    }
+]
