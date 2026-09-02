@@ -83,3 +83,12 @@ col1, col2, col3 = st.columns(3)
             "📍 Locations",
             len(set(item["location"] for item in equipment))
         )
+st.subheader("Available Equipment")
+
+    for item in equipment:
+        st.subheader("🚜 " + item["name"])
+        st.write("Category:", item["category"])
+        st.write("Owner:", item["owner"])
+        st.write("Location:", item["location"])
+        st.write("Rental Price:", item["price"])
+        st.divider()
