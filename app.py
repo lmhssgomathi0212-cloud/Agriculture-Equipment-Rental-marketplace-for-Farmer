@@ -60,3 +60,10 @@ menu = st.sidebar.radio(
     ["🏠 Home", "🔍 Find Equipment", "👤 Profile"],
     key="main_menu"
 )
+if menu == "🏠 Home":
+
+    st.header("Welcome to Agri Equipment Rental 🌱")
+    st.write(
+        "Our platform helps farmers find agricultural equipment "
+        "available for rental."
+    )
