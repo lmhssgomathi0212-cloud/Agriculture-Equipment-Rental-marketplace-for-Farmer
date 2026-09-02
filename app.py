@@ -115,3 +115,20 @@ elif menu == "🔍 Find Equipment":
         ],
         key="equipment_category"
     )
+results = []
+
+    for item in equipment:
+
+        search_match = (
+            search.lower() in item["name"].lower()
+            or search.lower() in item["category"].lower()
+            or search.lower() in item["location"].lower()
+        )
+
+        category_match = (
+            category == "All"
+            or item["category"] == category
+        )
+
+        if search_match and category_match:
+            results.append(item)
