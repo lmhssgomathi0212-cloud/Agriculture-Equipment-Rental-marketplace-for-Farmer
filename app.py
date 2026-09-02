@@ -53,3 +53,10 @@ equipment = [
         "price": "₹500/day"
     }
 ]
+st.sidebar.title("🌾 Menu")
+
+menu = st.sidebar.radio(
+    "Select an option",
+    ["🏠 Home", "🔍 Find Equipment", "👤 Profile"],
+    key="main_menu"
+)
