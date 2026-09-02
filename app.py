@@ -92,3 +92,26 @@ st.subheader("Available Equipment")
         st.write("Location:", item["location"])
         st.write("Rental Price:", item["price"])
         st.divider()
+elif menu == "🔍 Find Equipment":
+
+    st.header("🔍 Find Agricultural Equipment")
+
+    search = st.text_input(
+        "Search equipment",
+        placeholder="Example: Tractor, Harvester...",
+        key="equipment_search"
+    )
+
+    category = st.selectbox(
+        "Select Category",
+        [
+            "All",
+            "Tractor",
+            "Tillage Equipment",
+            "Sowing Equipment",
+            "Weeding Equipment",
+            "Harvesting Equipment",
+            "Spraying Equipment"
+        ],
+        key="equipment_category"
+    )
