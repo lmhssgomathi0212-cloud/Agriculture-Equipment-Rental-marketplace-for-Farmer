@@ -61,3 +61,4 @@ elif menu == "Profile":
 
 st.sidebar.divider()
 st.sidebar.write("🌱 Helping Farmers Find Equipment")
+# Frontend package
