@@ -62,3 +62,46 @@ elif menu == "Profile":
 st.sidebar.divider()
 st.sidebar.write("🌱 Helping Farmers Find Equipment")
 # Frontend package
+import streamlit as st
+from models.equipment import equipment
+
+
+def show_home():
+
+    st.header("🏠 Welcome to AgriRent")
+
+    st.write(
+        "Farmers can easily find and rent "
+        "agricultural equipment."
+    )
+
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.metric("🚜 Equipment", len(equipment))
+
+    with col2:
+        st.metric(
+            "👨‍🌾 Owners",
+            len(equipment)
+        )
+
+    with col3:
+        locations = set(
+            item["location"]
+            for item in equipment
+        )
+
+        st.metric(
+            "📍 Locations",
+            len(locations)
+        )
+
+    st.subheader("🌱 Available Equipment")
+
+    for item in equipment:
+
+        st.write(
+            f"🚜 **{item['name']}** - "
+            f"{item['price']}"
+        )
