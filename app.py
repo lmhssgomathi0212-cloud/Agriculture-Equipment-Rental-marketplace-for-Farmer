@@ -216,3 +216,49 @@ def show_login():
             st.error(
                 "❌ Invalid email or password."
             )
+import streamlit as st
+from models.equipment import equipment
+
+
+def show_equipment():
+
+    st.header("🔍 Find Equipment")
+
+    search = st.text_input(
+        "Search Equipment"
+    )
+
+    found = False
+
+    for item in equipment:
+
+        if search.lower() in item["name"].lower():
+
+            found = True
+
+            st.subheader(
+                "🚜 " + item["name"]
+            )
+
+            st.write(
+                "👨‍🌾 Owner:",
+                item["owner"]
+            )
+
+            st.write(
+                "📍 Location:",
+                item["location"]
+            )
+
+            st.write(
+                "💰 Price:",
+                item["price"]
+            )
+
+            st.divider()
+
+    if not found:
+
+        st.info(
+            "No equipment found."
+        )
