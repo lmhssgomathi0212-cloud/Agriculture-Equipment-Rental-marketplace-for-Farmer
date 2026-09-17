@@ -262,3 +262,53 @@ def show_equipment():
         st.info(
             "No equipment found."
         )
+import streamlit as st
+
+from models.equipment import equipment
+from backend.rental_service import add_rental
+
+
+def show_rental():
+
+    st.header("📋 Rent Equipment")
+
+    names = [
+        item["name"]
+        for item in equipment
+    ]
+
+    selected = st.selectbox(
+        "Select Equipment",
+        names
+    )
+
+    customer = st.text_input(
+        "Customer Name"
+    )
+
+    days = st.number_input(
+        "Number of Days",
+        min_value=1,
+        step=1
+    )
+
+    if st.button("Confirm Rental"):
+
+        if customer:
+
+            add_rental(
+                selected,
+                customer,
+                days
+            )
+
+            st.success(
+                f"✅ {selected} rented for "
+                f"{days} day(s)!"
+            )
+
+        else:
+
+            st.warning(
+                "Please enter customer name."
+            )
