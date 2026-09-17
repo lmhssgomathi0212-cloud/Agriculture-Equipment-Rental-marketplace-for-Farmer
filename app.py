@@ -312,3 +312,37 @@ def show_rental():
             st.warning(
                 "Please enter customer name."
             )
+import streamlit as st
+
+
+def show_profile():
+
+    st.header("👤 Profile")
+
+    name = st.text_input("Your Name")
+
+    phone = st.text_input(
+        "Phone Number"
+    )
+
+    location = st.text_input(
+        "Your Location"
+    )
+
+    if st.button("Save Profile"):
+
+        if name and phone and location:
+
+            st.success(
+                "✅ Profile Saved!"
+            )
+
+            st.write("Name:", name)
+            st.write("Phone:", phone)
+            st.write("Location:", location)
+
+        else:
+
+            st.warning(
+                "Please fill all details."
+            )
