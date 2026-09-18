@@ -347,3 +347,45 @@ def show_profile():
                 "Please fill all details."
             )
 # Backend package
+import sqlite3
+import os
+
+from config import DATABASE_NAME
+
+
+def get_connection():
+
+    os.makedirs(
+        "database",
+        exist_ok=True
+    )
+
+    return sqlite3.connect(
+        DATABASE_NAME
+    )
+
+
+def create_tables():
+
+    db = get_connection()
+
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS users(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT,
+            email TEXT UNIQUE,
+            password TEXT
+        )
+    """)
+
+    db.execute("""
+        CREATE TABLE IF NOT EXISTS rentals(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            equipment TEXT,
+            customer TEXT,
+            days INTEGER
+        )
+    """)
+
+    db.commit()
+    db.close()
