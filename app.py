@@ -512,3 +512,4 @@ def valid_password(password):
 def valid_name(name):
 
     return name != ""
+# Models package
