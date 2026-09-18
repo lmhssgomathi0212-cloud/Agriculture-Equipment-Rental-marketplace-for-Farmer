@@ -445,3 +445,22 @@ def login_user(
     db.close()
 
     return user
+from models.equipment import equipment
+
+
+def get_equipment():
+
+    return equipment
+
+
+def search_equipment(name):
+
+    result = []
+
+    for item in equipment:
+
+        if name.lower() in item["name"].lower():
+
+            result.append(item)
+
+    return result
