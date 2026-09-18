@@ -389,3 +389,59 @@ def create_tables():
 
     db.commit()
     db.close()
+import sqlite3
+
+from backend.database import get_connection
+
+
+def register_user(
+    name,
+    email,
+    password
+):
+
+    db = get_connection()
+
+    try:
+
+        db.execute(
+            """
+            INSERT INTO users
+            (name, email, password)
+            VALUES (?, ?, ?)
+            """,
+            (name, email, password)
+        )
+
+        db.commit()
+
+        return True
+
+    except sqlite3.IntegrityError:
+
+        return False
+
+    finally:
+
+        db.close()
+
+
+def login_user(
+    email,
+    password
+):
+
+    db = get_connection()
+
+    user = db.execute(
+        """
+        SELECT * FROM users
+        WHERE email = ?
+        AND password = ?
+        """,
+        (email, password)
+    ).fetchone()
+
+    db.close()
+
+    return user
