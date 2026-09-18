@@ -499,3 +499,16 @@ def get_rentals():
     db.close()
 
     return rentals
+def valid_email(email):
+
+    return "@" in email
+
+
+def valid_password(password):
+
+    return len(password) >= 6
+
+
+def valid_name(name):
+
+    return name != ""
