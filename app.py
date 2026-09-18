@@ -464,3 +464,38 @@ def search_equipment(name):
             result.append(item)
 
     return result
+from backend.database import get_connection
+
+
+def add_rental(
+    equipment,
+    customer,
+    days
+):
+
+    db = get_connection()
+
+    db.execute(
+        """
+        INSERT INTO rentals
+        (equipment, customer, days)
+        VALUES (?, ?, ?)
+        """,
+        (equipment, customer, days)
+    )
+
+    db.commit()
+    db.close()
+
+
+def get_rentals():
+
+    db = get_connection()
+
+    rentals = db.execute(
+        "SELECT * FROM rentals"
+    ).fetchall()
+
+    db.close()
+
+    return rentals
