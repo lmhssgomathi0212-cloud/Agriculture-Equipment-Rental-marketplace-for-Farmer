@@ -513,3 +513,15 @@ def valid_name(name):
 
     return name != ""
 # Models package
+class User:
+
+    def __init__(
+        self,
+        name,
+        email,
+        password
+    ):
+
+        self.name = name
+        self.email = email
+        self.password = password
