@@ -525,3 +525,47 @@ class User:
         self.name = name
         self.email = email
         self.password = password
+equipment = [
+
+    {
+        "name": "Tractor",
+        "owner": "Ramesh",
+        "location": "Chennai",
+        "price": "₹1500/day"
+    },
+
+    {
+        "name": "Rotavator",
+        "owner": "Kumar",
+        "location": "Coimbatore",
+        "price": "₹1000/day"
+    },
+
+    {
+        "name": "Seed Drill",
+        "owner": "Suresh",
+        "location": "Madurai",
+        "price": "₹800/day"
+    },
+
+    {
+        "name": "Power Weeder",
+        "owner": "Arun",
+        "location": "Salem",
+        "price": "₹700/day"
+    },
+
+    {
+        "name": "Harvester",
+        "owner": "Mani",
+        "location": "Trichy",
+        "price": "₹2500/day"
+    },
+
+    {
+        "name": "Sprayer",
+        "owner": "Vijay",
+        "location": "Erode",
+        "price": "₹500/day"
+    }
+]
