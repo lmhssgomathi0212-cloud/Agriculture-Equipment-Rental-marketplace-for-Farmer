@@ -569,3 +569,15 @@ equipment = [
         "price": "₹500/day"
     }
 ]
+class Rental:
+
+    def __init__(
+        self,
+        equipment,
+        customer,
+        days
+    ):
+
+        self.equipment = equipment
+        self.customer = customer
+        self.days = days
