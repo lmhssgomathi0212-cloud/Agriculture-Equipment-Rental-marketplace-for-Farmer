@@ -610,3 +610,13 @@ def test_password():
     assert valid_password(
         "123456"
     )
+from backend.equipment_service import search_equipment
+
+
+def test_equipment():
+
+    result = search_equipment(
+        "Tractor"
+    )
+
+    assert len(result) > 0
