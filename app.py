@@ -594,3 +594,19 @@ CREATE TABLE IF NOT EXISTS rentals (
     customer TEXT,
     days INTEGER
 );
+from backend.validation import valid_email
+from backend.validation import valid_password
+
+
+def test_email():
+
+    assert valid_email(
+        "test@gmail.com"
+    )
+
+
+def test_password():
+
+    assert valid_password(
+        "123456"
+    )
