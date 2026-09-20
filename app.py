@@ -581,3 +581,16 @@ class Rental:
         self.equipment = equipment
         self.customer = customer
         self.days = days
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT UNIQUE,
+    password TEXT
+);
+
+CREATE TABLE IF NOT EXISTS rentals (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    equipment TEXT,
+    customer TEXT,
+    days INTEGER
+);
