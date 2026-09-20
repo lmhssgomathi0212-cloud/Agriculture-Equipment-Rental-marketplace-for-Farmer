@@ -620,3 +620,17 @@ def test_equipment():
     )
 
     assert len(result) > 0
+from models.rental import Rental
+
+
+def test_rental():
+
+    rental = Rental(
+        "Tractor",
+        "Ramesh",
+        2
+    )
+
+    assert rental.equipment == "Tractor"
+    assert rental.customer == "Ramesh"
+    assert rental.days == 2
